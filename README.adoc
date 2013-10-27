@@ -1,11 +1,20 @@
 DIRENTcpp - A multi-platform dirent C++ wrapper
-===============================================
+-----------------------------------------------
+Daniel Vogelbacher <daniel@vogelbacher.name>
+
+
+:cpp: {basebackend@docbook:c++:cpp}
 
 
 == About
 
 
 == Usage
+
+[source,{cpp}]
+--------------------------------------------------------------------------------
+#include "direntcpp.hh"
+--------------------------------------------------------------------------------
 
 
 == Example
