@@ -3,9 +3,11 @@
 
 #include <iostream>
 
-int main(void)
-{
+#include "cxxc.hh"
 
+
+CXXC_TEST(SimpleTest)
+{
 	direntcpp::dir dir("/dev");
 
 	while(const direntcpp::entry *entry = dir.readdir())
@@ -13,12 +15,19 @@ int main(void)
         if(entry->type() == direntcpp::DIRENT_DIR)
             std::cout << entry->name() << std::endl;
 	}
-
-
-
-
-	return 0;
 }
+
+
+CXXC_TEST(NonExistingPath)
+{
+    direntcpp::dir dir;
+
+    CXXC_CHECK_THROW(std::runtime_error, dir.opendir("/not/exists"));
+}
+
+
+CXXC_MAIN_ENTRY
+
 
 //
 // Local Variables:
